@@ -15,7 +15,7 @@ const userSchema = new Schema({
   },
   password: { type: String, required: true },
   isAdmin: { type: Boolean, default: false },
-  item: [{ type: Schema.Types.ObjectId, ref: 'Item' }] // Relationship with Note model
+  item: [{ type: Schema.Types.ObjectId, ref: 'Item' }]
 }, {
   timestamps: true,
   toJSON: {

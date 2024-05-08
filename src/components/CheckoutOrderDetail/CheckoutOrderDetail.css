@@ -1,0 +1,42 @@
+.CheckoutOrderDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .CheckoutOrderDetail .details {
+    width: 768px;
+    padding: 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  .CheckoutOrderDetail .line-item-container {
+    flex-grow: 1;
+    overflow-y: auto; 
+  }
+  
+  .CheckoutOrderDetail .total {
+    margin-top: 20px;
+  }
+  
+  .CheckoutOrderDetail .btn-checkout {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  

@@ -1,20 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-  --white: #FFFFFF;
-  --orange: #F67F00;
-  --yellow: #FFC54A;
-  --blue-1: #79D7FD;
-  --blue-2: #00BBFA;
-  --blue-3: #001736;
-  --blue-4: #00183E;
-  --text-light: #474544;
-  --text-dark: #615954;
+  --primary-color: #69a2b6; /* Orange */
+  --secondary-color: #999744; /* Dark Blue */
+  --accent-color: #f6d94f; 
+  --color-neutral: #c1a97b; /* #c1a97b (193,169,123) */
+  --color-danger: #b40116; /* #b40116 (180,1,22) *//* Darker Blue */
+  --background-color: #90abe6; /* White */
+  --text-color: #000000; /* Black */
 }
 
-/* Body styles */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -22,77 +22,136 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--white);
-  padding: 2vmin;
-  min-height: 100vh; /* Use min-height instead of height for better responsiveness */
+  background-color: white;
+  padding: 0;
+  height: 100vh;
 }
 
-/* Container for the entire app */
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 #root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  height: 100%;
 }
 
-/* Header styles */
+.align-ctr {
+  text-align: center;
+}
+
+.align-rt {
+  text-align: right;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.flex-ctr-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-j-end {
+  justify-content: flex-end;
+}
+
+.scroll-y {
+  overflow-y: scroll;
+}
+
 .section-heading {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: var(--blue-1);
+  background-color: #f09232;
   color: var(--text-dark);
-  border: .1vmin solid var(--blue-2);
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  padding: .6vmin;
+  text-align: center;
+  font-size: 2vmin;
+}
+.section-heading-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f09232;
+  color: white;
+  font-weight: 900;
+  border-radius: 1vmin;
+  padding: .6vmin;
+  text-align: center;
+  font-size: 2vmin;
+}
+.section-heading-cat {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f09232;
+  color: white;
+  font-weight: 900;
+  border-radius: 1vmin;
+  padding: .6vmin;
+  text-align: center;
+  font-size: 2vmin;
+}
+.section-heading-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f09232;
+  color: white;
+  font-weight: 900;
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;
   font-size: 2vmin;
 }
 
-/* Form container styles */
 .form-container {
   padding: 3vmin;
-  background-color: var(--blue-1);
-  border: .1vmin solid var(--blue-2);
+  background-color: var(--tan-1);
+  border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
 
-/* Error message styles */
 p.error-message {
   color: var(--orange);
   text-align: center;
 }
 
-/* Button styles */
-button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: .1vmin solid var(--blue-2);
-  border-radius: .5vmin;
-  outline: none;
-  cursor: pointer;
+
+
+label {
+  font-size: 18px;
+  color: #333; 
 }
 
-/* Small and extra small button styles */
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
+input {
+  font-size: 16px; 
+  color: #555; 
 }
 
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
+input, textarea, select {
+  background-color: #fff; 
 }
 
-/* Disabled button styles */
-button:disabled, form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--blue-4);
+input, textarea, select {
+  padding: 10px;
+  margin-bottom: 10px; 
 }
+
+input:focus, textarea:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+

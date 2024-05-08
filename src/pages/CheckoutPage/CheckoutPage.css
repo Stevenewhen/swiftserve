@@ -1,0 +1,123 @@
+.CheckoutPage .nav.nav-tabs {
+    background-color: #568a9f;
+    font-weight: 900;
+  }
+  
+  .CheckoutPage .nav-tabs .nav-link {
+    color: #568a9f;
+  }
+  
+  .CheckoutPage .nav-tabs .nav-link.active {
+    background-color: #ffffff;
+    border-color: #dee2e6 #dee2e6 #ffffff;
+    color: #568a9f;
+  }
+  
+  .CheckoutPage button.btn-sm {
+    font-size: 1.5vmin;
+    padding: .6vmin .8vmin;
+    background-color: #69a2b6;
+    color: white;
+  }
+  
+  .CheckoutPage button.btn-xs {
+    font-size: 1vmin;
+    padding: .4vmin .5vmin;
+  }
+  
+  .CheckoutPage button:disabled,
+  .CheckoutPage form:invalid button[type="submit"] {
+    cursor: not-allowed;
+    background-color: var(--tan-4);
+  }
+  
+  .CheckoutPage button[type="submit"] {
+    grid-column: span 2;
+    margin: 1vmin 0 0;
+  }
+  
+  .CheckoutPage .line-item {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  
+  .CheckoutPage .LineItem {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
+    padding: 1vmin 0;
+    color: var(--text-light);
+    background-color: var(--white);
+    border-top: .1vmin solid #568a9f;
+    font-size: 1.5vw;
+    align-items: baseline;
+}
+
+.btn-checkout {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 0; /* Adjust vertical padding as needed */
+    width: 100%;
+    cursor: pointer;
+    text-align: center; /* Center the text */
+    box-sizing: border-box; /* Include padding in the width */
+  }
+  
+  .nav.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .TriagePage .nav-tabs {
+      background-color: #568a9f;
+      font-weight: 900;
+    }
+    
+    .nav-tabs .nav-link {
+      color: #ffffff;
+    }
+    
+    .nav-tabs .nav-link.active {
+      background-color: #ffffff;
+      border-color: #dee2e6 #dee2e6 #ffffff;
+      color: white;
+    }
+    
+    button.btn-sm {
+      font-size: 1.5vmin;
+      padding: .6vmin .8vmin;
+      background-color: #69a2b6;
+      color: white;
+    }
+    
+    button.btn-xs {
+      font-size: 1vmin;
+      padding: .4vmin .5vmin;
+    }
+    
+    button:disabled, form:invalid button[type="submit"] {
+      cursor: not-allowed;
+      background-color: var(--tan-4);
+    }
+    
+    button[type="submit"] {
+      grid-column: span 2;
+      margin: 1vmin 0 0;
+    }
+  
+    .line-item {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .CheckoutPage .nav-tabs .nav-link {
+        color: white;
+    }

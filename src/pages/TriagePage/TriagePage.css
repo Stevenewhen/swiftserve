@@ -1,0 +1,55 @@
+.nav.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+
+.TriagePage .nav-tabs {
+    background-color: #568a9f;
+    font-weight: 900;
+  }
+  
+  .nav-tabs .nav-link {
+    color: #ffffff;
+  }
+  
+  .nav-tabs .nav-link.active {
+    background-color: #ffffff;
+    border-color: #dee2e6 #dee2e6 #ffffff;
+    color: #568a9f;
+  }
+  
+  button.btn-sm {
+    font-size: 1.5vmin;
+    padding: .6vmin .8vmin;
+    background-color: #69a2b6;
+    color: white;
+  }
+  
+  button.btn-xs {
+    font-size: 1vmin;
+    padding: .4vmin .5vmin;
+  }
+  
+  button:disabled, form:invalid button[type="submit"] {
+    cursor: not-allowed;
+    background-color: var(--tan-4);
+  }
+  
+  button[type="submit"] {
+    grid-column: span 2;
+    margin: 1vmin 0 0;
+  }
+
+  .TriagePage .line-item {
+    font-size: 2rem;
+    font-weight: 900;
+    width: 100%; /* Ensure it takes up the full width of its container */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  }
+  

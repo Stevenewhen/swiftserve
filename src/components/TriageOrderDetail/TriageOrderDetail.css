@@ -1,0 +1,128 @@
+.TriageOrderDetail {
+  padding: 10px;
+}
+
+.TriageOrderDetail .details {
+  width: 6.5in;
+  height: 100vh;;
+  padding: 20px; 
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.TriageOrderDetail .order-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+.order-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .order-card.expanded {
+    flex-basis: calc(100% - 20px);
+    z-index: 1;
+  }
+  
+  .thumbnail {
+    padding: 10px;
+    display: none;
+  }
+  
+  .order-card.expanded .thumbnail {
+    display: block;
+  }
+  
+  .order-card.expanded .details {
+    display: block;
+  }
+  
+  .TriageOrderDetail {
+    padding: 10px;
+  }
+  
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .line-item-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .line-item {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .line-item:last-child {
+    border-bottom: none;
+  }
+  
+  .btn-mark-prepared {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .btn-mark-prepared:hover {
+    background-color: #90f395;
+  }
+  
+  .no-items {
+    color: #999;
+  }
+  
+  .item, .quantity {
+    margin: 0;
+  }
+  
+  .TriageOrderDetail {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .ordertable tr {
+    border: 5px solid #2c5de2;
+
+  }
+
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    border-right: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .order-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .large-red-bold {
+    color: #e81d35;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  
+  

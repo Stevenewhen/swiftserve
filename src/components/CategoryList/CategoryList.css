@@ -1,0 +1,29 @@
+.category-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+}
+
+.category-name {
+  flex-grow: 1;
+  cursor: pointer;
+  color: black;
+}
+
+.edit-btn, .delete-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.edit-btn {
+  background-color: orange;
+}
+
+.delete-btn {
+  background-color: black;
+}

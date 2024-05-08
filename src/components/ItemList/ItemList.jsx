@@ -1,44 +1,45 @@
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 export default function ItemList({ items, deleteItem, setEditingItemId, categories }) {
-   console.log('Items:', items); 
-   return (
-      <div className="mx-auto max-w-4xl">
-         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <table className="table-auto w-full">
-               <thead>
-                  <tr className="bg-orange-500 text-white">
-                     <th className="w-1/4 px-4 py-2">Item</th>
-                     <th className="w-1/4 px-4 py-2">Description</th>
-                     <th className="w-1/4 px-4 py-2">Category</th>
-                     <th className="w-1/12 px-4 py-2">Price</th>
-                     <th className="w-1/6 px-4 py-2">Actions</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  {items.map(item => (
-                     item._id &&
-                     <tr key={item._id} className="border-b border-gray-200 hover:bg-gray-100">
-                        <td className="px-4 py-2">{item.name}</td>
-                        <td className="px-4 py-2">{item.description}</td>
-                        <td className="px-4 py-2">{categories.find(cat => cat._id === item.category)?.name}</td>
-                        <td className="px-4 py-2">${item.price}</td>
-                        <td className="px-4 py-2">
-                           <button onClick={() => deleteItem(item._id)} className="text-white-500 hover:text-red-500 focus:outline-none">
-                              <FontAwesomeIcon icon={faTrashAlt} className="inline-block align-middle" />
-                           </button>
-                           {item._id && (
-                              <button onClick={() => setEditingItemId(item._id)} className="ml-2 text-white hover:text-blue-700 focus:outline-none">
-                                 <FontAwesomeIcon icon={faEdit} className="inline-block align-middle" />
-                              </button>
-                           )}
-                        </td>
-                     </tr>
-                  ))}
-               </tbody>
-            </table>
-         </div>
+  return (
+    <div className="container my-5">
+      <div className="card shadow-sm">
+        <table className="table">
+          <thead>
+            <tr>
+              <th style={{ width: '5%' }}>#</th>
+              <th style={{ width: '5%' }}>Image</th>
+              <th style={{ width: '25%' }}>Item</th>
+              <th style={{ width: '25%' }}>Category</th>
+              <th style={{ width: '20%' }}>Price</th>
+              <th style={{ width: '10%' }}>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item, index) => (
+              <tr key={item._id}>
+                <td>{index + 1}</td>
+                <td>
+                  <img src={item.imgLink} alt={item.name} style={{ maxWidth: '50px' }} />
+                </td>
+                <td>{item.name}</td>
+                <td>{item.category ? item.category.name : 'Uncategorized'}</td>
+                <td>${item.price}</td>
+                <td>
+                  <button onClick={() => deleteItem(item._id)} className="btn btn-danger mr-2">
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                  </button>
+                  <button onClick={() => setEditingItemId(item._id)} className="btn btn-primary">
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-   );
+    </div>
+  );
 }

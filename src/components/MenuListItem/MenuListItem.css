@@ -1,0 +1,119 @@
+.MenuListItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vmin;
+    padding: 2vmin;
+    color: var(--text-light);
+    background-color: var(--white);
+    border: .1vmin solid var(--tan-3);
+    border-radius: 1vmin;
+    font-size: 4vmin;
+    justify-items: center;
+  }
+  
+  
+  .MenuListItem .buy {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .MenuListItem .buy span {
+    font-size: 1.7vw;
+    text-align: center;
+    color: var(--text-light);
+  }
+  
+  .MenuListItem .name {
+    font-size: 2vw;
+    text-align: center;
+    color: var(--text-light);
+  }
+  
+  .MenuListItem-card {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Align items horizontally at the center */
+    align-items: center; /* Align items vertically at the center */
+    flex: 0 0 100%; /* Full width on extra small devices */
+    max-width: 100%; /* Ensures the max width is 100% */
+    margin-bottom: 32px; /* Space between rows */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 5px;
+    justify-items: center;
+    padding: 10px;
+  }
+  
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .MenuListItem-card {
+      flex: 0 0 50%; /* Takes half the width of the container */
+      max-width: 50%; /* Ensures the max width is 50% */
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .MenuListItem-card {
+      flex: 0 0 40%; /* Adjusted to take 40% of the width */
+      max-width: 40%; /* Ensures the max width is 40% */
+    }
+  }
+  
+  /* Extra large devices (desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .MenuListItem-card {
+      flex: 0 0 33.3333%; /* Takes a third of the width of the container */
+      max-width: 33.3333%; /* Ensures the max width is one third */
+    }
+  }
+  
+
+.MenuListItem .card-img-top {
+width: 260px; 
+height: 216px; 
+object-fit: cover;
+object-position: 25% 25%; 
+}
+
+.card-body {
+  padding: 20px;
+  color: white;
+}
+
+.card-title {
+  font-family: "Freeman", san-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.card-text {
+  text-align: center;
+  font-family: 'Josefin Sans';
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.875rem;
+}
+
+
+.card-body button {
+  background-color: #afbed5;
+  border: none;
+  font-weight: 900;
+  width: 100%;
+}
+
+.card-body button:hover {
+  background-color: #568a9f;
+}
+
+

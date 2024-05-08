@@ -1,0 +1,24 @@
+.text-black {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
+    background-color: #f7c272;
+}
+
+.col-lg-7 {
+    background-color: #568a9f;
+}
+
+.LogoLogin {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    text-decoration: underline;
+    align-content: center;
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+    text-align: center;
+}

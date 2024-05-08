@@ -20,7 +20,7 @@ export default function CategoryForm({ categoryData, onSave }) {
       name: name.trim(),
       sortOrder: sortOrder,
     };
-    
+
     try {
       if (categoryData) {
         await onSave(categoryData._id, category);
@@ -41,37 +41,39 @@ export default function CategoryForm({ categoryData, onSave }) {
     setSortOrder(evt.target.value);
   };
 
-  return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Category Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={handleChangeName}
-          required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        />
-      </div>
-      <div className="mb-6">
-        <label htmlFor="sortOrder" className="block text-gray-700 text-sm font-bold mb-2">Sort Order:</label>
-        <input
-          type="number"
-          id="sortOrder"
-          name="sortOrder"
-          value={sortOrder}
-          onChange={handleChangeSortOrder}
-          required
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        />
-      </div>
-      <div className="flex items-center justify-between">
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-          {categoryData ? 'Update Category' : 'Add Category'}
-        </button>
-      </div>
-    </form>
-  );
+    return (
+    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded p-4">
+  <div className="mb-3">
+    <label htmlFor="sortOrder" className="form-label">Sort Order:</label>
+    <input
+      type="number"
+      id="sortOrder"
+      name="sortOrder"
+      value={sortOrder}
+      onChange={handleChangeSortOrder}
+      required
+      className="form-control"
+    />
+  </div>
+
+  <div className="mb-3">
+    <label htmlFor="name" className="form-label">Category Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value={name}
+      onChange={handleChangeName}
+      required
+      className="form-control"
+    />
+  </div>
+
+  <div className="d-grid gap-2">
+    <button type="submit" className="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+    );
+    
 }

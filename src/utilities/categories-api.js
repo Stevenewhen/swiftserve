@@ -1,5 +1,5 @@
-import sendRequest from './send-request'; // Import the sendRequest function
-const BASE_URL = '/api/categories'; // Adjusted base URL to reflect Category entities
+import sendRequest from './send-request';
+const BASE_URL = '/api/categories';
 
 // Fetch all categories
 export async function getAll() {
@@ -8,7 +8,7 @@ export async function getAll() {
 
 // Create a new category
 export async function createCategory(category) {
-  return sendRequest(BASE_URL, 'POST', category); // Sending category data as payload
+  return sendRequest(BASE_URL, 'POST', category);
 }
 
 // Delete a category
@@ -23,5 +23,5 @@ export async function deleteCategory(categoryId) {
 
 // Edit a category
 export async function editCategory(categoryId, categoryData) {
-  return sendRequest(`${BASE_URL}/${categoryId}`, 'PUT', categoryData); // Sending updated category data as payload
+  return sendRequest(`${BASE_URL}/${categoryId}`, 'PUT', categoryData);
 }

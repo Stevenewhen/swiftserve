@@ -1,0 +1,16 @@
+.CategoryListForOrder {
+  list-style: none;
+  padding: 0;
+}
+
+.CategoryListForOrder .nav-link {
+  padding: 10px 15px;
+  color: var(--text-color);
+}
+
+.CategoryListForOrder .nav-link.active {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid white; 
+}
