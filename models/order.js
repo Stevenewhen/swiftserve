@@ -11,7 +11,6 @@ const lineItemSchema = new Schema({
 });
 
 lineItemSchema.virtual('extPrice').get(function() {
-  // 'this' keyword is bound to the lineItem document
   return this.qty * this.item.price;
 });
 
