@@ -40,8 +40,8 @@ export default function NavBar({ user, setUser }) {
           <Nav.Link
             className="nav-link"
             style={{ color: 'white', textDecoration: 'none', fontWeight: 900 }}
+            onClick={handleLogOut} // Directly attach the onClick handler here
           >
-            <Link to="" onClick={handleLogOut}></Link>
             <FontAwesomeIcon icon={faSignOutAlt} /> Logout
           </Nav.Link>
         </Nav>

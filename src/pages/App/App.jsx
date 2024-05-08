@@ -9,12 +9,14 @@ import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import TriagePage from '../TriagePage/TriagePage';
 import CheckoutPage from '../CheckoutPage/CheckoutPage';
 
+
 export default function App() {
    const [user, setUser] = useState(getUser());
  
    return (
      <main className="App">
        <Routes>
+        
          {user ? (
            <>
              <Route path="/triage" element={<TriagePage user={user} setUser={setUser} />} />

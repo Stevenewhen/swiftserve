@@ -10,7 +10,7 @@ export default function CheckoutPage({ user }) {
 
   const fetchData = async () => {
     try {
-      const fetchedOrders = await ordersAPI.getUnpaidOrders(); // Use getUnpaidUnpreparedOrders instead of getUnpaidOrders
+      const fetchedOrders = await ordersAPI.getUnpaidOrders(); 
       fetchedOrders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setOrders(fetchedOrders);
       if (fetchedOrders.length > 0) {
@@ -38,7 +38,7 @@ export default function CheckoutPage({ user }) {
         setOrders(updatedOrders);
         setSelectedOrder(updatedOrders[0]);
       } else {
-        // If there are no orders left, reset selectedOrder to null
+   
         setSelectedOrder(null);
       }
     } catch (error) {
