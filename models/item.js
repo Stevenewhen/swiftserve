@@ -1,16 +1,6 @@
-// itemSchema.js
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+// Ensure the Category model is processed by Mongoose (for populating Menu Item queries)
+require('./category');
+const itemSchema = require('./itemSchema');
 
-const itemSchema = new Schema({
-  name: { type: String, required: true },
-  description: { type: String },
-  price: { type: Number, required: true },
-  itemNumber: { type: Number },
-  category: { type: Schema.Types.ObjectId, ref: 'Category' },
-  imgLink: { type: String }
-}, {
-  timestamps: true
-});
-
-module.exports = itemSchema;
+module.exports = mongoose.model('Item', itemSchema);
