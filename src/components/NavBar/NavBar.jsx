@@ -38,14 +38,10 @@ export default function NavBar({ user, setUser }) {
             <FontAwesomeIcon icon={faShoppingCart} /> Checkout
           </Nav.Link>
           <Nav.Link
-            onClick={() => {
-              if (window.confirm("Are you sure you want to logout?")) {
-                handleLogOut();
-              }
-            }}
             className="nav-link"
             style={{ color: 'white', textDecoration: 'none', fontWeight: 900 }}
           >
+            <Link to="" onClick={handleLogOut}></Link>
             <FontAwesomeIcon icon={faSignOutAlt} /> Logout
           </Nav.Link>
         </Nav>
