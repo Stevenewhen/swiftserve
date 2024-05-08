@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from '../AuthPage/AuthPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ItemsPage from '../ItemsPage/ItemsPage';
-import { getUser, logOut } from '../../utilities/users-service';
+import { getUser } from '../../utilities/users-service';
 import { useState } from 'react';
 import AddOrderForm from '../../components/AddOrderForm/AddOrderForm';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
