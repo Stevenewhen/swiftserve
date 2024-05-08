@@ -1,5 +1,5 @@
 <div id="header" align="center">
-    <img src="https://via.placeholder.com/150">
+    <img src="https://i.imgur.com/88oOo3I.png">
 </div>
 
 # SwiftServ
@@ -14,11 +14,9 @@ Welcome to **SwiftServ**, the next-generation solution for modern restaurants ai
 
 # Screenshots
 
-Placeholder for screenshots:
-
-<img src="https://via.placeholder.com/300x200">
-<img src="https://via.placeholder.com/300x200">
-<img src="https://via.placeholder.com/300x200">
+<img src="https://i.imgur.com/K4Z2r79.png">
+<img src="https://i.imgur.com/tkGVzKf.png">
+<img src="https://i.imgur.com/ixh8xcO.png">
 
 # Technologies Used
 
@@ -38,4 +36,8 @@ Instructions on how to set up and run SwiftServ locally.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourgithub/swiftserv.git
+   git clone https://github.com/stevenewhen/swiftserv.git
+
+2. Vist the Site!
+
+    https://swiftserv-3f52fe1e56e7.herokuapp.com/

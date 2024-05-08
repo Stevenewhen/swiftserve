@@ -14,7 +14,7 @@ export default function ItemsPage({ user }) {
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [editingItemId, setEditingItemId] = useState(null);
-  const [setEditingCategoryId] = useState(null);
+  const [editingCategoryId, setEditingCategoryId] = useState(null);
   const [editingCategory, setEditingCategory] = useState(null);
   const [showAddCategoryForm, setShowAddCategoryForm] = useState(false);
 

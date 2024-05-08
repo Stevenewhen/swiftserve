@@ -12,8 +12,13 @@ export default function AddItemForm({ addItem, user}) {
     category: '',
     price: 0.00,
     itemNumber: '',
-    imgLink: '' // Add imgLink to the form data
+    imgLink: ''
   });
+
+  async function handleDropdownClick() {
+      const fetchedCategories = await categoriesAPI.getAll();
+      setCategories(fetchedCategories);
+  }
 
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -64,8 +69,7 @@ export default function AddItemForm({ addItem, user}) {
 
     const newItem = await itemsAPI.createItem(completeFormData);
     addItem(newItem);
-    setFormData({ name: '', description: '', category: '', imgLink: '' }); // Reset imgLink
-
+    setFormData({ name: '', description: '', category: '', imgLink: '' });
     setSubmitting(false);
   };
 
@@ -132,6 +136,7 @@ export default function AddItemForm({ addItem, user}) {
           id="category"
           name="category"
           value={formData.category}
+          onClick={handleDropdownClick}
           onChange={handleChange}
           required
         >

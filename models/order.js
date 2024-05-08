@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const itemSchema = require('./itemSchema');
 
-require('./item');  // Ensure Item model is loaded
 const lineItemSchema = new Schema({
   qty: { type: Number, default: 1 },
-  item: { type: Schema.Types.ObjectId, ref: 'Item' }
+  item: itemSchema
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
+});
+
+lineItemSchema.virtual('extPrice').get(function() {
+  // 'this' keyword is bound to the lineItem document
+  return this.qty * this.item.price;
 });
 
 const orderSchema = new Schema({

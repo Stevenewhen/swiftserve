@@ -1,17 +1,16 @@
+// itemSchema.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
-  name: { type: String, required: true },  // assuming name should be required
-  description: { type: String },  // optional by default
-  price: { type: Number, required: true },  // assuming price should be required
-  itemNumber: { type: Number, required: true },  // assuming itemNumber should be required
-  category: { type: Schema.Types.ObjectId, ref: 'Category' },  // optional by default
-  imgLink: { type: String }  // optional by default
+  name: { type: String, required: true },
+  description: { type: String },
+  price: { type: Number, required: true },
+  itemNumber: { type: Number },
+  category: { type: Schema.Types.ObjectId, ref: 'Category' },
+  imgLink: { type: String }
 }, {
   timestamps: true
 });
 
-const Item = mongoose.models.Item || mongoose.model('Item', itemSchema);
-
-module.exports = Item;
+module.exports = itemSchema;

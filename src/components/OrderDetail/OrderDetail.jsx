@@ -14,6 +14,8 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
     />
   ));
 
+  const formattedTotal = order.orderTotal != null ? `$${order.orderTotal.toFixed(2)}` : '$0.00';
+
   return (
     <div className="OrderDetail">
       <div className="section-heading">
@@ -25,16 +27,14 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           <>
             {lineItems}
             <section className="total">
-                <>
-                  <span className="right">TOTAL&nbsp;&nbsp;</span>
-                  <span className="right">${order.orderTotal.toFixed(2)}</span>
-                </>
-                <button
-                  className="btn-sm"
-                  onClick={handleCheckout}
-                  disabled={!lineItems.length}
-                >SEND TO TRIAGE</button>
-              <span>{order.totalQty}</span>
+              <div className="right">TOTAL&nbsp;&nbsp;</div>
+              <div className="right">{formattedTotal}</div>
+              <button
+                className="btn-sm"
+                onClick={handleCheckout}
+                disabled={!lineItems.length}
+              >SEND TO TRIAGE</button>
+              <div>Total Quantity: {order.totalQty}</div>
             </section>
           </>
         ) : (
