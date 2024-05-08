@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
-import NavBar from '../../components/NavBar/NavBar';
 import MenuList from '../../components/MenuList/MenuList';
 import CategoryListForOrder from '../../components/CategoryListForOrder/CategoryListForOrder';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
@@ -58,7 +57,6 @@ export default function NewOrderPage({ user, setUser }) {
   return (
     <main className="NewOrderPage">
       <aside>
-        <NavBar user={user} setUser={setUser} />
         <CategoryListForOrder
           categories={categoriesRef.current}
           activeCat={activeCat}

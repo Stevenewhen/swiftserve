@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as ordersAPI from '../../utilities/orders-api';
 import CheckoutOrderDetail from '../../components/CheckoutOrderDetail/CheckoutOrderDetail';
-import NavBar from '../../components/NavBar/NavBar';
 import './CheckoutPage.css';
 
 export default function CheckoutPage({ user }) {
@@ -49,7 +48,6 @@ export default function CheckoutPage({ user }) {
 
   return (
     <div className="CheckoutPage">
-      <NavBar />
       <ul className="nav nav-tabs">
         {orders.map((order) => (
           <li key={order._id} className="nav-item">

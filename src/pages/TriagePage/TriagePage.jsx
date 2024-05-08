@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as ordersAPI from '../../utilities/orders-api';
 import TriageOrderDetail from '../../components/TriageOrderDetail/TriageOrderDetail';
-import NavBar from '../../components/NavBar/NavBar';
 import './TriagePage.css';
 
 export default function TriagePage({ user }) {
@@ -51,7 +50,6 @@ export default function TriagePage({ user }) {
 
   return (
     <div className="TriagePage">
-      <NavBar />
       <ul className="nav nav-tabs">
         {orders.map((order) => (
           <li key={order._id} className="nav-item">

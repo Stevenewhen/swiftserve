@@ -7,10 +7,9 @@ import EditItemForm from '../../components/EditItemForm/EditItemForm';
 import CategoryList from '../../components/CategoryList/CategoryList';
 import CategoryForm from '../../components/CategoryForm/CategoryForm';
 import EditCategoryForm from '../../components/EditCategoryForm/EditCategoryForm';
-import NavBar from '../../components/NavBar/NavBar'
 import '../../index.css';
 
-export default function ItemsPage({ user }) {
+export default function ItemsPage({ user, setUser }) {
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [editingItemId, setEditingItemId] = useState(null);
@@ -92,7 +91,6 @@ export default function ItemsPage({ user }) {
 
   return (
     <>
-      <NavBar />
     <div className="container mx-auto px-4 py-8">
       <div>
         <div className="bg-white p-6 rounded-lg shadow-md">
