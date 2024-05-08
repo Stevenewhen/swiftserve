@@ -1,4 +1,4 @@
-const Item = require('../../models/ItemSave');
+const Item = require('../../models/item');
 
 module.exports = {
    index,
