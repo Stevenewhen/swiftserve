@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 export default function EditCategoryForm({ category, onSave, onCancel, onDelete }) {
     const [formData, setFormData] = useState({
         name: category?.name || '',
-        description: category?.description || '',
         sortOrder: category?.sortOrder || '',
         selectedCategoryId: category?._id || ''
     });
@@ -36,19 +35,6 @@ export default function EditCategoryForm({ category, onSave, onCancel, onDelete 
                     className="form-control"
                 />
             </div>
-
-            <div className="mb-3">
-                <label htmlFor="description" className="form-label">Description:</label>
-                <input
-                    type="text"
-                    id="description"
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    className="form-control"
-                />
-            </div>
-
             <div className="mb-3">
                 <label htmlFor="sortOrder" className="form-label">Sort Order:</label>
                 <input
