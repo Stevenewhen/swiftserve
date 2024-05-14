@@ -1,18 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const itemSchema = require('./itemSchema');
+const Item = require('./item'); // Ensure this path is correct
 
 const lineItemSchema = new Schema({
   qty: { type: Number, default: 1 },
-  item: itemSchema
+  item: { type: Schema.Types.ObjectId, ref: 'Item' } // Reference to the Item model
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
 });
 
 lineItemSchema.virtual('extPrice').get(function() {
-  // 'this' keyword is bound to the lineItem document
-  return this.qty * this.item.price;
+  return this.qty * (this.item.price || 0);
 });
 
 const orderSchema = new Schema({
