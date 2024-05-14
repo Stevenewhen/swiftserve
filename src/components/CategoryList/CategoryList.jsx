@@ -31,6 +31,7 @@ export default function CategoryList({ categories = [], setEditingCategoryId, de
       {selectedCategoryId && (
         <div className="action-buttons mt-2">
           <button
+            aria-label="Edit Category"
             onClick={() => {
               const selectedCategory = categories.find(category => category._id === selectedCategoryId);
               setEditingCategory(selectedCategory);
@@ -41,6 +42,7 @@ export default function CategoryList({ categories = [], setEditingCategoryId, de
             Edit Category
           </button>
           <button
+            aria-label="Delete Category"
             onClick={() => {
               if (window.confirm("Are you sure you want to delete this category?")) {
                 deleteCategory(selectedCategoryId);
@@ -51,6 +53,7 @@ export default function CategoryList({ categories = [], setEditingCategoryId, de
           >
             Delete Category
           </button>
+
 
         </div>
       )}

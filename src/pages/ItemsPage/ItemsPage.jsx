@@ -9,7 +9,7 @@ import CategoryForm from '../../components/CategoryForm/CategoryForm';
 import EditCategoryForm from '../../components/EditCategoryForm/EditCategoryForm';
 import '../../index.css';
 
-export default function ItemsPage({ user, setUser }) {
+export default function ItemsPage({ user }) {
   const [items, setItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [editingItemId, setEditingItemId] = useState(null);
@@ -116,16 +116,17 @@ export default function ItemsPage({ user, setUser }) {
             <CategoryForm onSave={handleAddCategory} />
           )}
           {editingCategory && (
-            <EditCategoryForm
-              category={editingCategory}
-              onSave={handleSaveCategory}
-              onCancel={() => {
-                setEditingCategoryId(null);
-                setEditingCategory(null);
-              }}
-              onDelete={deleteCategory}
-            />
-          )}
+    <EditCategoryForm
+        category={editingCategory}
+        onSave={handleSaveCategory}
+        onCancel={() => {
+            setEditingCategoryId(null);
+            setEditingCategory(null);
+        }}
+        setEditingCategoryId={setEditingCategoryId}
+    />
+)}
+
         </div>
       </div>
       <div className="mt-8">

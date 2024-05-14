@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const itemSchema = require('./item');
+const itemSchema = require('./itemSchema');
 
 const lineItemSchema = new Schema({
   qty: { type: Number, default: 1 },
@@ -11,12 +11,20 @@ const lineItemSchema = new Schema({
 });
 
 lineItemSchema.virtual('extPrice').get(function() {
+  // 'this' keyword is bound to the lineItem document
   return this.qty * this.item.price;
 });
 
 const orderSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-  ordernum: { type: String, unique: true },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  ordernum: {
+    type: String,
+    unique: true
+  },
   lineItems: [lineItemSchema],
   isPaid: { type: Boolean, default: false },
   isPrepared: { type: Boolean, default: false }

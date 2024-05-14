@@ -1,18 +1,17 @@
+// require('./category');
 // const mongoose = require('mongoose');
 // const Schema = mongoose.Schema;
 
 // const itemSchema = new Schema({
-//   name: { type: String },
-//   description: { type: String, optional: true },
-//   price: { type: Number },
+//   name: { type: String, required: true },
+//   description: { type: String },
+//   price: { type: Number, required: true },
 //   itemNumber: { type: Number },
-//   category: { type: Schema.Types.ObjectId, ref: 'Category', optional: true },
-//   imgLink: { type: String, optional: true }
+//   category: { type: Schema.Types.ObjectId, ref: 'Category' },
+//   imgLink: { type: String }
 // }, {
 //   timestamps: true
 // });
 
-
-// const Item = mongoose.model('Item', itemSchema);
-
-// module.exports = Item;
+// // Export a Mongoose model created from the schema
+// module.exports = mongoose.model('Item', itemSchema);

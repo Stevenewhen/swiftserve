@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 export default function EditCategoryForm({ category, onSave, onCancel, onDelete }) {
     const [formData, setFormData] = useState({
         name: category?.name || '',
@@ -15,7 +14,6 @@ export default function EditCategoryForm({ category, onSave, onCancel, onDelete 
             [name]: value
         });
     };
-
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {

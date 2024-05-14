@@ -1,17 +1,39 @@
-
-require('./category');
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 
+
+
+
 const itemSchema = new Schema({
-  name: { type: String, required: true },
-  description: { type: String },
-  price: { type: Number, required: true },
+
+  name: { type: String },
+
+  description: { type: String, optional: true },
+
+  price: { type: Number },
+
   itemNumber: { type: Number },
-  category: { type: Schema.Types.ObjectId, ref: 'Category' },
-  imgLink: { type: String }
+
+  category: { type: Schema.Types.ObjectId, ref: 'Category', optional: true },
+
+  imgLink: { type: String, optional: true }
+
 }, {
+
   timestamps: true
+
 });
 
-module.exports = itemSchema;
+
+
+
+
+
+
+const Item = mongoose.model('Item', itemSchema);
+
+
+
+
+module.exports = Item;

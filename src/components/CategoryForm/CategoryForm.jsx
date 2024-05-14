@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-
 export default function CategoryForm({ categoryData, onSave }) {
   const [name, setName] = useState('');
   const [sortOrder, setSortOrder] = useState('0');
-
   useEffect(() => {
     if (categoryData) {
       setName(categoryData.name);
@@ -13,7 +11,6 @@ export default function CategoryForm({ categoryData, onSave }) {
       setSortOrder('0');
     }
   }, [categoryData]);
-
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     const category = {
@@ -36,7 +33,6 @@ export default function CategoryForm({ categoryData, onSave }) {
   const handleChangeName = (evt) => {
     setName(evt.target.value);
   };
-
   const handleChangeSortOrder = (evt) => {
     setSortOrder(evt.target.value);
   };
@@ -75,5 +71,5 @@ export default function CategoryForm({ categoryData, onSave }) {
 </form>
 
     );
-    
+
 }
