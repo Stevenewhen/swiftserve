@@ -1,31 +1,60 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
-const Item = require('./item'); // Ensure this path is correct
+
+const itemSchema = require('./itemSchema');
+
+
+
 
 const lineItemSchema = new Schema({
+
   qty: { type: Number, default: 1 },
-  item: { type: Schema.Types.ObjectId, ref: 'Item' } // Reference to the Item model
+  item: itemSchema
 }, {
   timestamps: true,
   toJSON: { virtuals: true }
+
 });
+
+
+
 
 lineItemSchema.virtual('extPrice').get(function() {
-  return this.qty * (this.item.price || 0);
+
+  // 'this' keyword is bound to the lineItem document
+
+  return this.qty * this.item.price;
+
 });
 
+
+
+
 const orderSchema = new Schema({
+
   user: {
+
     type: Schema.Types.ObjectId,
+
     ref: 'User',
+
     required: true
+
   },
+
   ordernum: {
+
     type: String,
+
     unique: true
+
   },
+
   lineItems: [lineItemSchema],
+
   isPaid: { type: Boolean, default: false },
+
   isPrepared: { type: Boolean, default: false }
 }, {
   timestamps: true,
@@ -96,7 +125,13 @@ orderSchema.methods.setItemQty = function(itemId, newQty) {
   }
   // return the save() method's promise
   return cart.save();
+
 };
+
+
+
+
+
 
 
 module.exports = mongoose.model('Order', orderSchema);

@@ -1,20 +1,18 @@
-import React from 'react';
+
 import './OrderDetail.css';
 import LineItem from '../LineItem/LineItem';
 
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
   if (!order || !order.lineItems.length) return null;
 
-  const lineItems = order.lineItems.map(item => (
+  const lineItems = order.lineItems.map(lineItem => (
     <LineItem
-      lineItem={item}
+      lineItem={lineItem}
       isPaid={order.isPaid}
       handleChangeQty={handleChangeQty}
-      key={item._id}
+      key={lineItem.item._id}
     />
   ));
-
-  const formattedTotal = order.orderTotal != null ? `$${order.orderTotal.toFixed(2)}` : '$0.00';
 
   return (
     <div className="OrderDetail">
@@ -27,14 +25,13 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           <>
             {lineItems}
             <section className="total">
-              <div className="right">TOTAL&nbsp;&nbsp;</div>
-              <div className="right">{formattedTotal}</div>
+              <div>Total Quantity: {order.orderQty}</div>
+              <div>Total Price: ${order.orderTotal.toFixed(2)}</div>
               <button
-                className="btn-sm"
+                className="btn btn-primary btn-lg"
                 onClick={handleCheckout}
                 disabled={!lineItems.length}
               >SEND TO TRIAGE</button>
-              <div>Total Quantity: {order.totalQty}</div>
             </section>
           </>
         ) : (

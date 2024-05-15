@@ -20,7 +20,6 @@ async function index(req, res) {
  }
 }
 
-
 async function show(req, res) {
   const item = await Item.findById(req.params.id);
   res.json(item);
@@ -30,7 +29,7 @@ async function create(req, res) {
  const item = new Item({
    name: req.body.name,
    itemNumber: req.body.itemNumber,
-   price: req.body.price,
+   price: parseFloat(req.body.price).toFixed(2),
    user: req.user._id,
    category: req.body.category,
    imgLink: req.body.imgLink,
@@ -53,24 +52,27 @@ async function create(req, res) {
 async function editItem(req, res) {
   try {
     const itemId = req.params.id;
-    const item = await Item.findById(itemId);
+    const itemUpdates = {
+      itemNumber: req.body.itemNumber,
+      name: req.body.name,
+      description: req.body.description,
+      price: parseFloat(req.body.price).toFixed(2),
+      category: req.body.category,
+      imgLink: req.body.imgLink
+    };
+
+    // Using `findByIdAndUpdate` with options `{ new: true }` to return the updated document
+    const updatedItem = await Item.findByIdAndUpdate(itemId, itemUpdates, { new: true })
+      .populate('category'); // Populate the category field to return the full category object
+
+    if (!updatedItem) return res.status(404).json({ error: 'Item not found' });
     
-    if (!item) return res.status(404).json({ error: 'Item not found' });
-
-    item.itemNumber = req.body.itemNumber;
-    item.name = req.body.name;
-    item.description = req.body.description;
-    item.price = req.body.price;
-    item.category = req.body.category;
-    item.imgLink = req.body.imgLink;
-
-
-    const updatedItem = await item.save();
     res.json(updatedItem);
   } catch (err) {
     res.status(500).json({ error: 'Error updating item', details: err.message });
   }
 }
+
 
 async function remove(req, res) {
   const item = await Item.findById(req.params.id);

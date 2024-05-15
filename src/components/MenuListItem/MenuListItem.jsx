@@ -1,4 +1,3 @@
-import React from 'react';
 import './MenuListItem.css';
 
 export default function MenuListItem({ menuItem, handleAddToOrder }) {

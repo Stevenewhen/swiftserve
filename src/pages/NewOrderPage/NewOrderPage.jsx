@@ -23,7 +23,7 @@ export default function NewOrderPage({ user, setUser }) {
       setActiveCat(categoriesRef.current[0]);
     }
     getItems();
-  }, []); // Empty array ensures this runs only once on mount
+  }, []);
 
   // Load cart
   useEffect(() => {
@@ -33,11 +33,10 @@ export default function NewOrderPage({ user, setUser }) {
         setCart(cart);
       } catch (error) {
         console.error('Failed to fetch cart:', error);
-        // Handle error state as needed
       }
     }
     getCart();
-  }, []); // This also should only run once on mount
+  }, []);
 
   const handleAddToOrder = async (itemId) => {
     const updatedCart = await ordersAPI.addItemToCart(itemId);

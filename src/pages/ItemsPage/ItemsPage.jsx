@@ -70,6 +70,7 @@ export default function ItemsPage({ user }) {
   async function handleSaveChanges(itemId, formData) {
     try {
       const updatedItem = await itemsAPI.editItem(itemId, formData);
+      // Update the items state with the updated item
       setItems(prevItems => prevItems.map(item => item._id === itemId ? updatedItem : item));
       setEditingItemId(null);
     } catch (err) {
@@ -77,6 +78,7 @@ export default function ItemsPage({ user }) {
       alert("Failed to update the item: " + err.message);
     }
   }
+  
 
   async function handleSaveCategory(categoryId, formData) {
     try {
@@ -91,64 +93,64 @@ export default function ItemsPage({ user }) {
 
   return (
     <>
-    <div className="container mx-auto px-4 py-8">
-      <div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="section-heading-item">Item List</h2>
-          <AddItemForm addItem={addItem} user={user} categories={categories} />
-        </div>
-      </div>
-      <div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="section-heading-cat">Manage Categories</h2>
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <CategoryList
-              categories={categories}
-              setEditingCategoryId={setEditingCategoryId}
-              setEditingCategory={setEditingCategory}
-              deleteCategory={deleteCategory}
-            />
-            <button onClick={() => setShowAddCategoryForm(true)} className="btn btn-success">
-              Add Category
-            </button>
+      <div className="container mx-auto px-4 py-8">
+        <div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="section-heading-item">Item List</h2>
+            <AddItemForm addItem={addItem} user={user} categories={categories} />
           </div>
-          {showAddCategoryForm && (
-            <CategoryForm onSave={handleAddCategory} />
-          )}
-          {editingCategory && (
-    <EditCategoryForm
-        category={editingCategory}
-        onSave={handleSaveCategory}
-        onCancel={() => {
-            setEditingCategoryId(null);
-            setEditingCategory(null);
-        }}
-        setEditingCategoryId={setEditingCategoryId}
-    />
-)}
+        </div>
+        <div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="section-heading-cat">Manage Categories</h2>
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <CategoryList
+                categories={categories}
+                setEditingCategoryId={setEditingCategoryId}
+                setEditingCategory={setEditingCategory}
+                deleteCategory={deleteCategory}
+              />
+              <button onClick={() => setShowAddCategoryForm(true)} className="btn btn-success">
+                Add Category
+              </button>
+            </div>
+            {showAddCategoryForm && (
+              <CategoryForm onSave={handleAddCategory} />
+            )}
+            {editingCategory && (
+              <EditCategoryForm
+                category={editingCategory}
+                onSave={handleSaveCategory}
+                onCancel={() => {
+                  setEditingCategoryId(null);
+                  setEditingCategory(null);
+                }}
+                setEditingCategoryId={setEditingCategoryId}
+              />
+            )}
 
+          </div>
         </div>
-      </div>
-      <div className="mt-8">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="section-heading-list">Item List</h2>
-          <ItemList
-            key={items.length}
-            items={items}
-            categories={categories}
-            deleteItem={deleteItem}
-            setEditingItemId={setEditingItemId}
+        <div className="mt-8">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="section-heading-list">Item List</h2>
+            <ItemList
+              key={items.length}
+              items={items}
+              categories={categories}
+              deleteItem={deleteItem}
+              setEditingItemId={setEditingItemId}
+            />
+          </div>
+        </div>
+        {editingItemId && (
+          <EditItemForm
+            item={items.find(item => item._id === editingItemId)}
+            onSave={handleSaveChanges}
+            onCancel={() => setEditingItemId(null)}
           />
-        </div>
+        )}
       </div>
-      {editingItemId && (
-        <EditItemForm
-          item={items.find(item => item._id === editingItemId)}
-          onSave={handleSaveChanges}
-          onCancel={() => setEditingItemId(null)}
-        />
-      )}
-    </div>
     </>
 
   );
